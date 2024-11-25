@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>To-Do List Application</title>
+</head>
+<body>
+    <div>
+        <h1>Task List</h1>
+
+        <!-- Task Creation Form -->
+        <h2>Create a New Task</h2>
+        <form action="/api/tasks/save" method="post">
+            <div>
+                <label for="id">Task ID:</label>
+                <input type="text" id="id" name="id" placeholder="Task ID" required>
+            </div>
+            <div>
+                <label for="title">Title:</label>
+                <input type="text" id="title" name="title" placeholder="Task Title" required>
+            </div>
+            <div>
+                <label for="description">Description:</label>
+                <textarea id="description" name="description" placeholder="Task Description"></textarea>
+            </div>
+            <div>
+                <label for="status">Status:</label>
+                <select id="status" name="status" required>
+                    <option value="Pending">Pending</option>
+                    <option value="In Progress">In Progress</option>
+                    <option value="Completed">Completed</option>
+                </select>
+            </div>
+            <button type="submit">Add Task</button>
+        </form>
+
+        <hr>
+
+        <!-- Display Task List -->
+        <h2>All Tasks</h2>
+        <table>
+            <thead>
+                <tr>
+                    <th>ID</th>
+                    <th>Title</th>
+                    <th>Description</th>
+                    <th>Status</th>
+                    <th>Actions</th>
+                </tr>
+            </thead>
+            <tbody>
+                <th:block th:each="task : ${tasks}">
+                    <tr>
+                        <td th:text="${task.id}"></td> <!-- Display the task ID -->
+                        <td th:text="${task.title}"></td>
+                        <td th:text="${task.description}"></td>
+                        <td th:text="${task.status}"></td>
+                        <td>
+                        	<!-- Update Task Form -->
+                            <form th:action="@{/api/tasks/{id}(id=${task.id})}" method="get">
+    							<input type="hidden" name="taskId" th:value="${task.id}" />
+    							<button type="submit">Update</button>
+							</form>
+
+                            <!-- Delete Task Form -->
+                            <form action="/api/tasks/delete" method="post">
+                                <input type="hidden" name="taskId" th:value="${task.id}" />
+                                <button type="submit">Delete</button>
+                            </form>
+                        </td>
+                    </tr>
+                </th:block>
+            </tbody>
+        </table>
+    </div>
+</body>
+</html>
