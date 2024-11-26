@@ -17,6 +17,7 @@
       crossorigin="anonymous"
     />
     <link rel="stylesheet" href="./homeStyle.css" />
+    <link rel="stylesheet" href="./searchStyle.css" />
     <script
       src="https://kit.fontawesome.com/6cb71b80aa.js"
       crossorigin="anonymous"
@@ -64,59 +65,56 @@
       </nav>
     </header>
     <main>
-      <h2 class="text-center quote">“Your Tasks, Your Success—Begin Now”</h2>
-      <hr style="margin: 0% 30%; border-width: 2px; color: rgb(0, 0, 0)" />
-      <div class="container task-list">
-        <div class="row justify-content-center">
-          <div class="col-md-4 col-sm-6 col-md-6 col-lg-4 mb-3">
-            <div class="card border-0 addtask">
-              <div class="card-body text-center">
-                <h5 class="card-title text-center h4 mb-2 mt-2 text-danger">
-                  Add Task
-                </h5>
-                <a
-                  href="./addTask.html"
-                  class="btn add-btn btn-outline-danger mt-1 mb-2"
-                  ><i class="fa-regular fa-plus fa-2xl"></i
-                ></a>
-              </div>
-            </div>
-          </div>
-          <div class="col-md-4 col-sm-6 col-md-6 col-lg-4 mb-3">
-            <div class="card border-warning">
-              <div class="card-body">
-                <h5 class="card-title h4 text-wrap">Special title treatment</h5>
-                <hr />
-                <p class="card-text text-truncate">
-                  With supporting text below as a natural lead-in to additional
-                  content.</p>                                  
-                    <a href="#" class="btn btn-outline-warning text-center">View</a>
-              </div>
-            </div>
-          </div>
-          <div class="col-md-4 col-sm-6 col-md-6 col-lg-4 mb-3">
-            <div class="card border-warning">
-              <div class="card-body">
-                <h5 class="card-title h4 text-wrap">Special title treatment</h5>
-                <hr />
-                <p class="card-text text-truncate">
-                  With supporting text below as a natural lead-in to additional
-                  content.
-                </p>
-                <a href="#" class="btn btn-outline-warning">View</a>
-              </div>
-            </div>
-          </div>
-          <div class="col-md-4 col-sm-6 col-md-6 col-lg-4 mb-3">
-            <div class="card border-warning">
-              <div class="card-body">
-                <h5 class="card-title h4 text-wrap">Special title treatment</h5>
-                <hr />
-                <p class="card-text text-truncate">
-                  With supporting text below as a natural lead-in to additional
-                  content.
-                </p>
-                <a href="#" class="btn btn-outline-warning">View</a>
+      <div class="container-1">
+        <form class="d-flex justify-content-center" role="search">
+          <input
+            class="form-control search-box me-3"
+            type="search"
+            placeholder="Search"
+            aria-label="Search"
+          />
+          <button class="btn btn-outline-warning" type="submit">Search</button>
+        </form>
+      </div>
+      <div class="container-2">
+        <div class="col-sm-6 col-lg-10 col-md-auto">
+          <div class="container task-list">
+            <div class="row justify-content-center">
+              <div class="col-md-5 col-sm-6 col-md-12 col-lg-12 mb-3">
+                <div class="card border-warning">
+                  <h5
+                    class="card-header fs-4 text-wrap p-1 bg-warning text-white text-center fw-bold"
+                  >
+                    Special title treatment
+                  </h5>
+                  <div class="card-body">
+                    <p class="card-text text-center fs-6 fw-bold">
+                      ID : <span class="fw-lighter"> 2424</span>
+                    </p>
+                    <hr />
+                    <div class="descrition-status">
+                      <p class="card-text fs-6 fw-bold">
+                        Descrition :
+                        <span
+                          >With supporting text below as a natural lead-in to
+                          additional</span
+                        >
+                      </p>
+                      <p class="card-text fs-6 fw-bold">
+                        Status :
+                        <span class="text-success fw-bold"> Completed</span>
+                      </p>
+                    </div>
+                    <div class="card-group">
+                      <p class="fw-bold">
+                        Assigned : <span class="fw-lighter">2132533</span>
+                      </p>
+                      <p class="fw-bold">
+                        Modified : <span class="fw-lighter">46474558</span>
+                      </p>
+                    </div>
+                  </div>
+                </div>
               </div>
             </div>
           </div>
